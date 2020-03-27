@@ -1,0 +1,4 @@
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\Manager\obj\Debug\netcoreapp3.1\Manager.csprojAssemblyReference.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\Manager\obj\Debug\netcoreapp3.1\Manager.csproj.CoreCompileInputs.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\Manager\obj\Debug\netcoreapp3.1\Manager.AssemblyInfoInputs.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\Manager\obj\Debug\netcoreapp3.1\Manager.AssemblyInfo.cs
