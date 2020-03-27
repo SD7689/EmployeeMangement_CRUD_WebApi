@@ -14,6 +14,10 @@ namespace EmployeeMangementCurd_Api
     using Microsoft.Extensions.DependencyInjection;
     using Swashbuckle.AspNetCore.Swagger;
     using Repository.UserContext;
+    using Repository.IRepos;
+    using Repository.ReposItems;
+    using Manager.ManagerInterface;
+    using Manager.ManagerImplementation;
 
     /// <summary>
     /// Startup Class.
@@ -32,6 +36,9 @@ namespace EmployeeMangementCurd_Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<UserDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
+            services.AddTransient<IManager, ImpManager>();
+            services.AddTransient<IRepo, ImpRepo>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "EmployeeManagementSystem", Version = "v1" });

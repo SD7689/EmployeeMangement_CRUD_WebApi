@@ -11,9 +11,10 @@ namespace Model
 
     public class Employee
     {
+        private int empId;
+        private string fullName;
         private string email;
         private string password;
-        private int empId;
         private string mobile;
         private string address;
 
@@ -30,6 +31,19 @@ namespace Model
                 this.empId = value;
             }
         }
+
+        public string FullName
+        {
+            get
+            {
+                return this.fullName;
+            }
+            set
+            {
+                this.fullName = value;
+            }
+        }
+
         public string Email
         {
             get

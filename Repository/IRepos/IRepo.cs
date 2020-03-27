@@ -8,6 +8,7 @@ namespace Repository.IRepos
 {
     using Model;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// interface IRepo.
@@ -32,14 +33,14 @@ namespace Repository.IRepos
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        Employee AddEmployee(Employee employee);
+        Task<int> AddEmployee(Employee employee);
 
         /// <summary>
         /// UpdateEmployee method.
         /// </summary>
         /// <param name="employeeChanges"></param>
         /// <returns></returns>
-        Employee UpdateEmployee(Employee employeeChanges);
+        Task<int> UpdateEmployee(Employee employeeChanges);
 
         /// <summary>
         /// DeleteEmployee method.

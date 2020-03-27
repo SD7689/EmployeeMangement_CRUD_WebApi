@@ -1,15 +1,9 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="20200324081452_emplyeeTable.cs" company="Bridgelabz">
-// Copyright © 2020 Company="BridgeLabz".
-// </copyright>
-// <creator name="Shivam Dewangan"/>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+
 namespace Repository.Migrations
 {
-    using Microsoft.EntityFrameworkCore.Metadata;
-    using Microsoft.EntityFrameworkCore.Migrations;
-
-    public partial class emplyeeTable : Migration
+    public partial class EmployeeEntity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

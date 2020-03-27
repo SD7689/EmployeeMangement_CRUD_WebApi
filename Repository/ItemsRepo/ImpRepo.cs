@@ -10,11 +10,12 @@ namespace Repository.ReposItems
     using Repository.IRepos;
     using Repository.UserContext;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// RepoOperations class implements IRepo interface.
     /// </summary>
-    public class RepoOperations : IRepo
+    public class ImpRepo : IRepo
     {
         private readonly UserDbContext userDBContext;
 
@@ -22,28 +23,23 @@ namespace Repository.ReposItems
         /// Constructor RepoOperations.
         /// </summary>
         /// <param name="userDBContext"></param>
-        public RepoOperations(UserDbContext userDBContext)
+        public ImpRepo(UserDbContext userDBContext)
         {
             this.userDBContext = userDBContext;
         }
 
         /// <summary>
-        /// AddEmployee method.
+        /// AddEmployee method. 
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        public Employee AddEmployee(Employee employee)
+        public Task<int> AddEmployee(Employee employee)
         {
             userDBContext.Employees.Add(employee);
-            userDBContext.SaveChanges();
-            return employee;
+            var result = userDBContext.SaveChangesAsync();
+            return result;
         }
 
-        /// <summary>
-        /// DeleteEmployee method.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public Employee DeleteEmployee(int id)
         {
             Employee employee = userDBContext.Employees.Find(id);
@@ -52,40 +48,26 @@ namespace Repository.ReposItems
                 userDBContext.Employees.Remove(employee);
                 userDBContext.SaveChanges();
             }
-            return employee;
 
+            return employee;
         }
 
-        /// <summary>
-        /// GetAllEmployees method.
-        /// </summary>
-        /// <returns> Employee </returns>
         public IEnumerable<Employee> GetAllEmployees()
         {
             return userDBContext.Employees;
         }
 
-        /// <summary>
-        /// GetEmployee method.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public Employee GetEmployee(int id)
         {
             return userDBContext.Employees.Find(id);
         }
 
-        /// <summary>
-        /// UpdateEmployee method.
-        /// </summary>
-        /// <param name="employeeChanges"></param>
-        /// <returns></returns>
-        public Employee UpdateEmployee(Employee employeeChanges)
+        public Task<int> UpdateEmployee(Employee employeeChanges)
         {
             var employee = userDBContext.Employees.Attach(employeeChanges);
             employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            userDBContext.SaveChanges();
-            return employeeChanges;
+            var result = userDBContext.SaveChangesAsync();
+            return result;
         }
     }
 }
