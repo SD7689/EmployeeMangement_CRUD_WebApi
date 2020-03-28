@@ -28,6 +28,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Email");
 
+                    b.Property<string>("FullName");
+
                     b.Property<string>("Mobile");
 
                     b.Property<string>("Password");
