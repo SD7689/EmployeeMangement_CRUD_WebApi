@@ -13,6 +13,9 @@ namespace EmployeeMangementCurd_Api.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Model;
 
+    /// <summary>
+    /// EmployeeController implements ControllerBase.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
@@ -22,7 +25,12 @@ namespace EmployeeMangementCurd_Api.Controllers
         {
             this.manager = manager;
         }
-        
+
+        /// <summary>
+        /// AddEmployee Method.
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         [Route("AddEmployee")]
         [HttpPost]
         public async Task<IActionResult> AddEmployee(Employee employee)
@@ -38,6 +46,11 @@ namespace EmployeeMangementCurd_Api.Controllers
             }
         }
 
+        /// <summary>
+        /// GetAllEmployees Method.
+        /// Routing [Route("GetAllEmployee")]
+        /// </summary>
+        /// <returns></returns>
         [Route("GetAllEmployee")]
         [HttpGet]
         public IEnumerable<Employee> GetAllEmployees()
@@ -45,6 +58,12 @@ namespace EmployeeMangementCurd_Api.Controllers
             return this.manager.GetAllEmployees();
         }
 
+        /// <summary>
+        /// UpdateEmployee Method.
+        /// Routing [Route("UpdateEmployee")]
+        /// </summary>
+        /// <param name="employeeChanges"></param>
+        /// <returns></returns>
         [Route("UpdateEmployee")]
         [HttpPut]
         public async Task<IActionResult> UpdateEmployee(Employee employeeChanges)
@@ -60,6 +79,12 @@ namespace EmployeeMangementCurd_Api.Controllers
             }
         }
 
+        /// <summary>
+        /// DeleteEmployee Method.
+        /// Routing [Route("DeleteEmployee")]
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("DeleteEmployee")]
         public Employee DeleteEmployee(int id)
@@ -67,6 +92,12 @@ namespace EmployeeMangementCurd_Api.Controllers
             return this.manager.DeleteEmployee(id);
         }
 
+        /// <summary>
+        /// GetEmployee Method.
+        /// Routing  [Route("GetEmployee")]
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("GetEmployee")]
         [HttpGet]
         public Employee GetEmployee(int id)
