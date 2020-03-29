@@ -4,12 +4,19 @@
 // </copyright>
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
+using System;
+
 namespace Model
 {
-    using System;
-
+    /// <summary>
+    /// Program Class.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Main Method.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
