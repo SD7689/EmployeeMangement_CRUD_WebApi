@@ -1,9 +1,10 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IRepo.cs" company="Bridgelabz">
+// <copyright file="IEmployeeRepository.cs" company="Bridgelabz">
 // Copyright © 2020 Company="BridgeLabz".
 // </copyright>
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Repository.RepositoryInterface
 {
     using Model;
@@ -19,34 +20,34 @@ namespace Repository.RepositoryInterface
         /// GetEmployee method.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns> It returns if execution is successful or not </returns>
         Employee GetEmployee(int id);
 
         /// <summary>
         /// GetAllEmployees method.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> It returns if execution is successful or not </returns>
         IEnumerable<Employee> GetAllEmployees();
 
         /// <summary>
         /// AddEmployee method.
         /// </summary>
         /// <param name="employee"></param>
-        /// <returns></returns>
+        /// <returns> It returns if execution is successful or not </returns>
         Task<int> AddEmployee(Employee employee);
 
         /// <summary>
         /// UpdateEmployee method.
         /// </summary>
         /// <param name="employeeChanges"></param>
-        /// <returns></returns>
+        /// <returns> It returns if execution is successful or not </returns>
         Task<int> UpdateEmployee(Employee employeeChanges);
 
         /// <summary>
         /// DeleteEmployee method.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns> It returns if execution is successful or not </returns>
         Employee DeleteEmployee(int id);
     }
 }
