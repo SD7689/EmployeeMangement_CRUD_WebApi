@@ -4,11 +4,15 @@
 // </copyright>
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Model
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
+    
+    /// <summary>
+    /// Employee Class.
+    /// </summary>
     public class Employee
     {
         private int empId;
@@ -18,6 +22,9 @@ namespace Model
         private string mobile;
         private string address;
 
+        /// <summary>
+        /// Primary key set as EmpId
+        /// </summary>
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int EmpId
@@ -32,6 +39,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// set get on FullName
+        /// </summary>
         public string FullName
         {
             get
@@ -44,6 +54,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Email using Set get.
+        /// </summary>
         public string Email
         {
             get
@@ -55,6 +68,10 @@ namespace Model
                 this.email = value;
             }
         }
+
+        /// <summary>
+        /// Password using Set get.
+        /// </summary>
         public string Password
         {
             get
@@ -66,6 +83,10 @@ namespace Model
                 this.password = value;
             }
         }
+
+        /// <summary>
+        /// Mobile using Set get.
+        /// </summary>
         public string Mobile
         {
             get
@@ -77,6 +98,10 @@ namespace Model
                 this.mobile = value;
             }
         }
+
+        /// <summary>
+        /// Address using Set get.
+        /// </summary>
         public string Address
         {
             get
