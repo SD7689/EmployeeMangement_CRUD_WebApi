@@ -4,34 +4,45 @@
 // </copyright>
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace EmployeeMangementCurd_Api
 {
+    using Manager.ManagerInterface;
+    using Manager.ManagerImplementation;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Swashbuckle.AspNetCore.Swagger;
     using Repository.UserContext;
-    using Manager.ManagerInterface;
-    using Manager.ManagerImplementation;
     using Repository.RepositoryInterface;
     using Repository.RepositoryClass;
+    using Swashbuckle.AspNetCore.Swagger;
 
     /// <summary>
     /// Startup Class.
     /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Startup Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// IConfiguration Configuration function.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        ///  This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -45,7 +56,11 @@ namespace EmployeeMangementCurd_Api
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
