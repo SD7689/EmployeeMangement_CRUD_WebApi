@@ -8,6 +8,7 @@ namespace EmployeeMangementCurd_Api
 {
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
+    using Serilog;
 
     /// <summary>
     /// Program Class.
@@ -21,6 +22,11 @@ namespace EmployeeMangementCurd_Api
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File(@"C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\EmployeeMangementSystem\LogFile.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
         }
 
         /// <summary>
