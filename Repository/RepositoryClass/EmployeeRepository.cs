@@ -1,9 +1,10 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="RepoOperations.cs" company="Bridgelabz">
+// <copyright file="EmployeeRepository.cs" company="Bridgelabz">
 // Copyright © 2020 Company="BridgeLabz".
 // </copyright>
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Repository.RepositoryClass
 {
     using Repository.RepositoryInterface;
