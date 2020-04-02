@@ -39,9 +39,14 @@ namespace QualityMeasurement
             return this.Length / 12;
         }
 
-        public int ConverFeetintoYard()
+        public double ConverFeetintoYard()
         {
             return this.Length / 3;
+        }
+
+        public double InchToYard()
+        {
+            return this.Length / 36;
         }
 
 
