@@ -49,6 +49,10 @@ namespace QualityMeasurement
             return this.Length / 36;
         }
 
+        public int YardToInch()
+        {
+            return this.Length * 36;
+        }
 
         public override bool Equals(object obj)
         {
