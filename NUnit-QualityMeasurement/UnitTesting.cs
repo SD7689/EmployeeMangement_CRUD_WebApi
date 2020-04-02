@@ -43,6 +43,14 @@ namespace NUnit_QualityMeasurement
             Feet feet = new Feet();
             bool result = feet.Equals(new Feet());
             Assert.IsTrue(result);
-        }       
+        }
+
+        [Test]
+        public void Perform_Test_For_Equality_Value_Check()
+        {
+            Feet feet = new Feet(3);
+            int result = feet.EqualsValue();
+            Assert.AreEqual(3, result);
+        }
     }
 }
