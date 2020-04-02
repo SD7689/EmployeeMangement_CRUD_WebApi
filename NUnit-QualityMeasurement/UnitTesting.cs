@@ -139,8 +139,16 @@ namespace NUnit_QualityMeasurement
         public void Compare_3_Feet_Equal_to_1_Yard_return_True()
         {
             UnitCheck feet = new UnitCheck("Feet", 3);
-            int actual = feet.ConverFeetintoYard();
+            double actual = feet.ConverFeetintoYard();
             Assert.AreEqual(1, actual);
+        }
+        
+        [Test]
+        public void Compare_1_Feet_Not_Equal_to_1_Yard_return_True()
+        {
+            UnitCheck feet = new UnitCheck("Feet", 1);
+            double actual = feet.ConverFeetintoYard();
+            Assert.AreNotEqual(1, actual);
         }
     }
 }
