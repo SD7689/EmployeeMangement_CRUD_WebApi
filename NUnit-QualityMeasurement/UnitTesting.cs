@@ -36,5 +36,13 @@ namespace NUnit_QualityMeasurement
             bool result = feet.Equals(feet);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void Perform_Test_For_Equality_Type_Check()
+        {
+            Feet feet = new Feet();
+            bool result = feet.Equals(new Feet());
+            Assert.IsTrue(result);
+        }       
     }
 }
