@@ -39,6 +39,10 @@ namespace QualityMeasurement
             return this.Length / 12;
         }
 
+        public int ConverFeetintoYard()
+        {
+            return this.Length / 3;
+        }
 
 
         public override bool Equals(object obj)
