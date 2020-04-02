@@ -92,5 +92,15 @@ namespace NUnit_QualityMeasurement
             int result = inch.EqualsValue();
             Assert.AreEqual(3, result);
         }
+
+        [Test]
+        public void Give_0_Feet_and_0_Inch_Should_Return_Equal()
+        {
+            UnitCheck feet = new UnitCheck("Feet",0);
+            int expected = feet.EqualsValue();
+            UnitCheck inch = new UnitCheck("Inch",0);
+            int actual = inch.EqualsValue();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
