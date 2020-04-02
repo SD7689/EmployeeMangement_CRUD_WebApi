@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QualityMeasurement
 {
-    public class Feet 
+    public class Feet
     {
         public int feet;
         private object p;
@@ -19,25 +19,17 @@ namespace QualityMeasurement
             this.feet = feet;
         }
 
-        public Feet(object p)
+        public int EqualsValue()
         {
-            this.p = p;
-        }
-
-        public bool ConvertFeetValue(Feet feet)
-        {
-            if (this.feet.Equals(feet.feet))
-                return true;
-            else
-                return false;
+           return this.feet;
         }
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
-            else
+            if ((obj == null) || Object.ReferenceEquals(this, obj) || this.GetType().Equals(obj.GetType()))
                 return true;
+
+                return false;
         }
     }
 }
