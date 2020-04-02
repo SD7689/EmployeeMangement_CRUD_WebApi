@@ -60,5 +60,13 @@ namespace NUnit_QualityMeasurement
             int result = inch.EqualsValue();
             Assert.AreEqual(0, result);
         }
+
+        [Test]
+        public void PerForm_Test_TC1_7_For_Equality_Null_Check()
+        {
+            Inch inch = new Inch(0);
+            bool result = inch.Equals(null);
+            Assert.IsTrue(result);
+        }
     }
 }
