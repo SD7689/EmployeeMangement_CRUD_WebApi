@@ -134,5 +134,13 @@ namespace NUnit_QualityMeasurement
             double actual = inch.ConvertInchToFeet();
             Assert.AreEqual(1, actual);
         }
+        
+        [Test]
+        public void Compare_3_Feet_Equal_to_1_Yard_return_True()
+        {
+            UnitCheck feet = new UnitCheck("Feet", 3);
+            int actual = feet.ConverFeetintoYard();
+            Assert.AreEqual(1, actual);
+        }
     }
 }
