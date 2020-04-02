@@ -18,14 +18,14 @@ namespace QualityMeasurement
             this.inch = inch;
         }
 
-        public int EqualValue()
+        public int EqualsValue()
         {
             return this.inch;
         }
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
+            if ((obj == null )|| Object.ReferenceEquals(this, obj))
                 return true;
             
              return false;
