@@ -166,5 +166,13 @@ namespace NUnit_QualityMeasurement
             int actual = yard.YardToInch();
             Assert.AreEqual(36, actual);
         }
+
+        [Test]
+        public void Compare_36_inch_Equal_to_1_Yard_return_True()
+        {
+            UnitCheck inch = new UnitCheck("Inch", 36);
+            double actual = inch.InchToYard();
+            Assert.AreEqual(1, actual);
+        }
     }
 }
