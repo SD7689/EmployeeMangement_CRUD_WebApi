@@ -102,5 +102,21 @@ namespace NUnit_QualityMeasurement
             int actual = inch.EqualsValue();
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void Compare_1ft_Not_Equal_to_1inch_return_False()
+        {
+            UnitCheck inch = new UnitCheck("Inch",1);
+            int actual = inch.ConvertInchToFeet();
+            Assert.AreNotEqual(1,actual);
+        }
+
+        [Test]
+        public void Compare_1inch_Not_Equal_to_1ft_return_False()
+        {
+            UnitCheck feet = new UnitCheck("Feet", 1);
+            int actual = feet.ConvertFeetToInch();
+            Assert.AreNotEqual(1, actual);
+        }
     }
 }
