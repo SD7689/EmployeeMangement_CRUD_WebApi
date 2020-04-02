@@ -1,0 +1,13 @@
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.exe
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.deps.json
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.runtimeconfig.json
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.runtimeconfig.dev.json
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.dll
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\bin\Debug\netcoreapp3.1\QualityMeasurement.pdb
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.csprojAssemblyReference.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.csproj.CoreCompileInputs.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.AssemblyInfoInputs.cache
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.AssemblyInfo.cs
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.dll
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.pdb
+C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\QualityMeasurement\obj\Debug\netcoreapp3.1\QualityMeasurement.genruntimeconfig.cache

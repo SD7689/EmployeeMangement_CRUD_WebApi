@@ -1,17 +1,24 @@
-using NUnit.Framework;
-using QualityMeasurement;
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Tests.cs" company="Bridgelabz">
+// Copyright © 2020 Company="BridgeLabz".
+// </copyright>
+// <creator name="Shivam Dewangan"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NUnit_QualityMeasurement
 {
+    using NUnit.Framework;
+    using QualityMeasurement;
+
+    /// <summary>
+    /// Tests Class.
+    /// </summary>
     public class Tests
     {
 
-        [SetUp]
-        public void Setup()
-        {
-
-        }
-
+        /// <summary>
+        /// Give_0_Feet_and_0_Feet_Should_Return_Equal.
+        /// </summary>
         [Test]
         public void Give_0_Feet_and_0_Feet_Should_Return_Equal()
         {
@@ -21,6 +28,9 @@ namespace NUnit_QualityMeasurement
 
         }
 
+        /// <summary>
+        /// PerForm_Test_For_Equality_Null_Check.
+        /// </summary>
         [Test]
         public void PerForm_Test_For_Equality_Null_Check()
         {
@@ -29,6 +39,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_For_Equality_Ref_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_For_Equality_Ref_Check()
         {
@@ -37,6 +50,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_For_Equality_Type_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_For_Equality_Type_Check()
         {
@@ -45,6 +61,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_For_Equality_Value_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_For_Equality_Value_Check()
         {
@@ -53,6 +72,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(3, result);
         }
 
+        /// <summary>
+        /// Give_0_Inch_and_0_Inch_Should_Return_Equal.
+        /// </summary>
         [Test]
         public void Give_0_Inch_and_0_Inch_Should_Return_Equal()
         {
@@ -61,6 +83,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(0, result);
         }
 
+        /// <summary>
+        /// PerForm_Test_TC1_8_For_Equality_Null_Check.
+        /// </summary>
         [Test]
         public void PerForm_Test_TC1_8_For_Equality_Null_Check()
         {
@@ -69,6 +94,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_TC1_9_For_Equality_Ref_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_TC1_9_For_Equality_Ref_Check()
         {
@@ -77,6 +105,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_TC1_10_For_Equality_Type_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_TC1_10_For_Equality_Type_Check()
         {
@@ -85,6 +116,9 @@ namespace NUnit_QualityMeasurement
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Perform_Test_TC1_11_For_Equality_Ref_Check.
+        /// </summary>
         [Test]
         public void Perform_Test_TC1_11_For_Equality_Ref_Check()
         {
@@ -93,6 +127,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(3, result);
         }
 
+        /// <summary>
+        /// Give_0_Feet_and_0_Inch_Should_Return_Equal.
+        /// </summary>
         [Test]
         public void Give_0_Feet_and_0_Inch_Should_Return_Equal()
         {
@@ -103,6 +140,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Compare_1ft_Not_Equal_to_1inch_return_False.
+        /// </summary>
         [Test]
         public void Compare_1ft_Not_Equal_to_1inch_return_False()
         {
@@ -111,6 +151,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreNotEqual(1, actual);
         }
 
+        /// <summary>
+        /// Compare_1inch_Not_Equal_to_1ft_return_False.
+        /// </summary>
         [Test]
         public void Compare_1inch_Not_Equal_to_1ft_return_False()
         {
@@ -119,6 +162,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreNotEqual(1, actual);
         }
 
+        /// <summary>
+        /// Compare_1Feet_Equal_to_12_inch_return_True.
+        /// </summary>
         [Test]
         public void Compare_1Feet_Equal_to_12_inch_return_True()
         {
@@ -127,6 +173,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(12,actual);
         }
 
+        /// <summary>
+        /// Compare_12_inch_Equal_to_1_Feet_return_True.
+        /// </summary>
         [Test]
         public void Compare_12_inch_Equal_to_1_Feet_return_True()
         {
@@ -134,7 +183,10 @@ namespace NUnit_QualityMeasurement
             double actual = inch.ConvertInchToFeet();
             Assert.AreEqual(1, actual);
         }
-        
+
+        /// <summary>
+        /// Compare_3_Feet_Equal_to_1_Yard_return_True.
+        /// </summary>
         [Test]
         public void Compare_3_Feet_Equal_to_1_Yard_return_True()
         {
@@ -142,7 +194,10 @@ namespace NUnit_QualityMeasurement
             double actual = feet.ConverFeetintoYard();
             Assert.AreEqual(1, actual);
         }
-        
+
+        /// <summary>
+        /// Compare_1_Feet_Not_Equal_to_1_Yard_return_True.
+        /// </summary>
         [Test]
         public void Compare_1_Feet_Not_Equal_to_1_Yard_return_True()
         {
@@ -150,7 +205,10 @@ namespace NUnit_QualityMeasurement
             double actual = feet.ConverFeetintoYard();
             Assert.AreNotEqual(1, actual);
         }
-        
+
+        /// <summary>
+        /// Compare_1_inch_Not_Equal_to_1_Yard_return_True.
+        /// </summary>
         [Test]
         public void Compare_1_inch_Not_Equal_to_1_Yard_return_True()
         {
@@ -158,7 +216,10 @@ namespace NUnit_QualityMeasurement
             double actual = inch.InchToYard();
             Assert.AreNotEqual(1, actual);
         }
-        
+
+        /// <summary>
+        /// Compare_1_Yard_Equal_to_36_inch_return_True.
+        /// </summary>
         [Test]
         public void Compare_1_Yard_Equal_to_36_inch_return_True()
         {
@@ -167,6 +228,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(36, actual);
         }
 
+        /// <summary>
+        /// Compare_36_inch_Equal_to_1_Yard_return_True.
+        /// </summary>
         [Test]
         public void Compare_36_inch_Equal_to_1_Yard_return_True()
         {
@@ -175,6 +239,9 @@ namespace NUnit_QualityMeasurement
             Assert.AreEqual(1, actual);
         }
 
+        /// <summary>
+        /// Compare_1_Yard_Equal_to_3_Feet_return_True.
+        /// </summary>
         [Test]
         public void Compare_1_Yard_Equal_to_3_Feet_return_True()
         {
