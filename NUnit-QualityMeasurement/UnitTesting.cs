@@ -76,5 +76,13 @@ namespace NUnit_QualityMeasurement
             bool result = inch.Equals(inch);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void Perform_Test_TC1_10_For_Equality_Type_Check()
+        {
+            Feet feet = new Feet();
+            bool result = feet.Equals(new Feet());
+            Assert.IsTrue(result);
+        }
     }
 }
