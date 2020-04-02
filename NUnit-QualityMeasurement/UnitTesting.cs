@@ -19,5 +19,13 @@ namespace NUnit_QualityMeasurement
             bool result = feet.ConvertFeetValue(new Feet(0));
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void PerForm_Test_For_Equality_Null_Check()
+        {
+            Feet feet = new Feet(null);
+            bool result = feet.Equals(new Feet(0));
+            Assert.IsTrue(result);
+        }
     }
 }
