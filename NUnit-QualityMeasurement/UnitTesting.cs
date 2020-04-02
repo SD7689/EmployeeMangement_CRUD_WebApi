@@ -80,9 +80,17 @@ namespace NUnit_QualityMeasurement
         [Test]
         public void Perform_Test_TC1_10_For_Equality_Type_Check()
         {
-            Feet feet = new Feet();
-            bool result = feet.Equals(new Feet());
+            Inch inch = new Inch();
+            bool result = inch.Equals(new Inch());
             Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void Perform_Test_TC1_11_For_Equality_Ref_Check()
+        {
+            Inch inch = new Inch(3);
+            int result = inch.EqualsValue();
+            Assert.AreEqual(3, result);
         }
     }
 }
