@@ -107,7 +107,7 @@ namespace NUnit_QualityMeasurement
         public void Compare_1ft_Not_Equal_to_1inch_return_False()
         {
             UnitCheck inch = new UnitCheck("Inch",1);
-            int actual = inch.ConvertInchToFeet();
+            double actual = inch.ConvertInchToFeet();
             Assert.AreNotEqual(1,actual);
         }
 
