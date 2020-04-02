@@ -8,31 +8,20 @@ namespace QualityMeasurement
     public class Feet 
     {
         public int feet;
+        private object p;
+
+        public Feet()
+        {
+        }
 
         public Feet(int feet)
         {
             this.feet = feet;
         }
 
-        //public override bool Equals(object obj)
-        //{
-        //    if (feet.Equals(obj))
-        //        return true;
-        //    else
-        //        return false;
-
-        //}
-
-        public override bool Equals(object obj)
+        public Feet(object p)
         {
-            if (this.GetType().Equals(obj.GetType()))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            this.p = p;
         }
 
         public bool ConvertFeetValue(Feet feet)
@@ -43,6 +32,12 @@ namespace QualityMeasurement
                 return false;
         }
 
-
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            else
+                return true;
+        }
     }
 }
