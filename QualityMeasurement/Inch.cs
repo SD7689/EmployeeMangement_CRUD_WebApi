@@ -22,5 +22,13 @@ namespace QualityMeasurement
         {
             return this.inch;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return true;
+            
+             return false;
+        }
     }
 }
