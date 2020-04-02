@@ -134,8 +134,5 @@ namespace NUnit_QualityMeasurement
             double actual = inch.ConvertInchToFeet();
             Assert.AreEqual(1, actual);
         }
-
-
-
     }
 }
