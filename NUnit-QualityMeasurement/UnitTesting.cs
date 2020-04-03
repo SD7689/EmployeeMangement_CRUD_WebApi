@@ -293,5 +293,49 @@ namespace NUnit_QualityMeasurement
             int result = gram.EqualsValue();
             Assert.AreEqual(3, result);
         }
+
+        /// <summary>
+        /// PerForm_Test_For_Equality_Null_Check.
+        /// </summary>
+        [Test]
+        public void PerForm_Test_For_KiloGram_Equality_Null_Check()
+        {
+            UnitCheck kilogram = new UnitCheck("KiloGram");
+            bool result = kilogram.Equals(null);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Ref_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_KiloGram_Equality_Ref_Check()
+        {
+            UnitCheck kilogram = new UnitCheck("KiloGram");
+            bool result = kilogram.Equals(kilogram);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Type_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_KiloGram_Equality_Type_Check()
+        {
+            UnitCheck kilogram = new UnitCheck("KiloGram");
+            bool result = kilogram.Equals(new UnitCheck());
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Value_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_KiloGram_Equality_Value_Check()
+        {
+            UnitCheck kilogram = new UnitCheck("KiloGram", 3);
+            int result = kilogram.EqualsValue();
+            Assert.AreEqual(3, result);
+        }
     }
 }
