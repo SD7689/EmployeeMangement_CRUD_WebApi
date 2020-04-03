@@ -249,5 +249,49 @@ namespace NUnit_QualityMeasurement
             int actual = yard.YardToFeet();
             Assert.AreEqual(3, actual);
         }
+
+        /// <summary>
+        /// PerForm_Test_For_Equality_Null_Check.
+        /// </summary>
+        [Test]
+        public void PerForm_Test_For_Gram_Equality_Null_Check()
+        {
+            UnitCheck gram = new UnitCheck("Gram");
+            bool result = gram.Equals(null);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Ref_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Gram_Equality_Ref_Check()
+        {
+            UnitCheck gram = new UnitCheck("Gram");
+            bool result = gram.Equals(gram);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Type_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Gram_Equality_Type_Check()
+        {
+            UnitCheck gram = new UnitCheck("Gram");
+            bool result = gram.Equals(new UnitCheck());
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Value_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Gram_Equality_Value_Check()
+        {
+            UnitCheck gram = new UnitCheck("Gram", 3);
+            int result = gram.EqualsValue();
+            Assert.AreEqual(3, result);
+        }
     }
 }
