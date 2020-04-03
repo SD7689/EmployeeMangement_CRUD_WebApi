@@ -337,5 +337,49 @@ namespace NUnit_QualityMeasurement
             int result = kilogram.EqualsValue();
             Assert.AreEqual(3, result);
         }
+
+        /// <summary>
+        /// PerForm_Test_For_Equality_Null_Check.
+        /// </summary>
+        [Test]
+        public void PerForm_Test_For_Celcius_Equality_Null_Check()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius");
+            bool result = celcius.Equals(null);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Ref_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Celcius_Equality_Ref_Check()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius");
+            bool result = celcius.Equals(celcius);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Type_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Celcius_Equality_Type_Check()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius");
+            bool result = celcius.Equals(new UnitCheck());
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Perform_Test_For_Equality_Value_Check.
+        /// </summary>
+        [Test]
+        public void Perform_Test_For_Celcius_Equality_Value_Check()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius", 3);
+            int result = celcius.EqualsValue();
+            Assert.AreEqual(3, result);
+        }
     }
 }
