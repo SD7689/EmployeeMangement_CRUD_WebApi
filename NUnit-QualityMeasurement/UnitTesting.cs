@@ -185,69 +185,69 @@ namespace NUnit_QualityMeasurement
         }
 
         /// <summary>
-        /// Compare_3_Feet_Equal_to_1_Yard_return_True.
+        /// Compare_1kg_Equal_to_1000gm_return_True.
         /// </summary>
         [Test]
-        public void Compare_3_Feet_Equal_to_1_Yard_return_True()
+        public void Compare_1kg_Equal_to_1000gm_return_True()
         {
-            UnitCheck feet = new UnitCheck("Feet", 3);
-            double actual = feet.ConverFeetintoYard();
+            UnitCheck kg = new UnitCheck("KiloGram", 1);
+            double actual = kg.KgtoGram();
+            Assert.AreEqual(1000, actual);
+        }
+
+        /// <summary>
+        /// Compare_1_Gram_Equal_to_1_Gram_return_True
+        /// </summary>
+        [Test]
+        public void Compare_1_Gram_Equal_to_1_Gram_return_True()
+        {
+            UnitCheck gram = new UnitCheck("Gram", 1);
+            double actual = gram.EqualsValue();
             Assert.AreEqual(1, actual);
         }
 
         /// <summary>
-        /// Compare_1_Feet_Not_Equal_to_1_Yard_return_True.
+        /// Compare_1_Celcius_Equal_to_1_Celcius_return_True.
         /// </summary>
         [Test]
-        public void Compare_1_Feet_Not_Equal_to_1_Yard_return_True()
+        public void Compare_1_Celcius_Equal_to_1_Celcius_return_True()
         {
-            UnitCheck feet = new UnitCheck("Feet", 1);
-            double actual = feet.ConverFeetintoYard();
-            Assert.AreNotEqual(1, actual);
-        }
-
-        /// <summary>
-        /// Compare_1_inch_Not_Equal_to_1_Yard_return_True.
-        /// </summary>
-        [Test]
-        public void Compare_1_inch_Not_Equal_to_1_Yard_return_True()
-        {
-            UnitCheck inch = new UnitCheck("Inch", 1);
-            double actual = inch.InchToYard();
-            Assert.AreNotEqual(1, actual);
-        }
-
-        /// <summary>
-        /// Compare_1_Yard_Equal_to_36_inch_return_True.
-        /// </summary>
-        [Test]
-        public void Compare_1_Yard_Equal_to_36_inch_return_True()
-        {
-            UnitCheck yard = new UnitCheck("Yard", 1);
-            int actual = yard.YardToInch();
-            Assert.AreEqual(36, actual);
-        }
-
-        /// <summary>
-        /// Compare_36_inch_Equal_to_1_Yard_return_True.
-        /// </summary>
-        [Test]
-        public void Compare_36_inch_Equal_to_1_Yard_return_True()
-        {
-            UnitCheck inch = new UnitCheck("Inch", 36);
-            double actual = inch.InchToYard();
+            UnitCheck celcius = new UnitCheck("Celcius", 1);
+            int actual = celcius.EqualsValue();
             Assert.AreEqual(1, actual);
         }
 
         /// <summary>
-        /// Compare_1_Yard_Equal_to_3_Feet_return_True.
+        /// Compare_1_Celcius_NotEqual_to_2_Celcius_return_True.
         /// </summary>
         [Test]
-        public void Compare_1_Yard_Equal_to_3_Feet_return_True()
+        public void Compare_1_Celcius_NotEqual_to_2_Celcius_return_False()
         {
-            UnitCheck yard = new UnitCheck("Yard", 1);
-            int actual = yard.YardToFeet();
-            Assert.AreEqual(3, actual);
+            UnitCheck celcius = new UnitCheck("Celcius", 1);
+            int actual = celcius.EqualsValue();
+            Assert.AreNotEqual(2, actual);
+        }
+
+        /// <summary>
+        /// Compare_1_Celcius_NotEqual_to_50_FH_return_False.
+        /// </summary>
+        [Test]
+        public void Compare_1_Celcius_NotEqual_to_50_FH_return_False()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius", 1);
+            double actual = celcius.CelciustoFarenheit();
+            Assert.AreNotEqual(50, actual);
+        }
+
+        /// <summary>
+        /// Compare_1_Celcius_Equal_to_33_Fh_return_True.
+        /// </summary>
+        [Test]
+        public void Compare_1_Celcius_Equal_to_33_Fh_return_True()
+        {
+            UnitCheck celcius = new UnitCheck("Celcius", 1);
+            double actual = celcius.CelciustoFarenheit();
+            Assert.AreEqual(33.8, actual);
         }
 
         /// <summary>
