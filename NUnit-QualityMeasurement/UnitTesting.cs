@@ -24,7 +24,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck feet = new UnitCheck("Feet", 0);
             int result = feet.EqualsValue();
-            Assert.AreEqual(0, result);
+            Feet feet1 = new Feet(0);
+            int expected = feet1.EqualsValue();
+            Assert.AreEqual(expected, result);
 
         }
 
@@ -68,8 +70,10 @@ namespace NUnit_QualityMeasurement
         public void Perform_Test_For_Equality_Value_Check()
         {
             UnitCheck feet = new UnitCheck("Feet", 3);
-            int result = feet.EqualsValue();
-            Assert.AreEqual(3, result);
+            int actual = feet.EqualsValue();
+            Feet feet1 = new Feet(3);
+            int expected = feet1.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -79,8 +83,10 @@ namespace NUnit_QualityMeasurement
         public void Give_0_Inch_and_0_Inch_Should_Return_Equal()
         {
             UnitCheck inch = new UnitCheck("Inch",0);
-            int result = inch.EqualsValue();
-            Assert.AreEqual(0, result);
+            int actual = inch.EqualsValue();
+            Inch inch1 = new Inch(0);
+            int expected = inch1.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -148,7 +154,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck feet = new UnitCheck("Feet", 1);
             int actual = feet.ConvertFeetToInch();
-            Assert.AreNotEqual(1, actual);
+            Inch inch = new Inch(1);
+            int expected = inch.EqualsValue();
+            Assert.AreNotEqual(expected, actual);
         }
 
         /// <summary>
@@ -159,7 +167,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck inch = new UnitCheck("Inch", 1);
             double actual = inch.ConvertInchToFeet();
-            Assert.AreNotEqual(1, actual);
+            Feet feet = new Feet(1);
+            int expected = feet.EqualsValue();
+            Assert.AreNotEqual(expected, actual);
         }
 
         /// <summary>
@@ -170,7 +180,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck feet = new UnitCheck("Feet", 1);
             int actual = feet.ConvertFeetToInch();
-            Assert.AreEqual(12,actual);
+            Inch inch = new Inch(12);
+            int expected = inch.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -181,7 +193,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck inch = new UnitCheck("Inch", 12);
             double actual = inch.ConvertInchToFeet();
-            Assert.AreEqual(1, actual);
+            Feet feet = new Feet(1);
+            int expected = feet.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -190,9 +204,11 @@ namespace NUnit_QualityMeasurement
         [Test]
         public void Compare_1kg_Equal_to_1000gm_return_True()
         {
-            UnitCheck kg = new UnitCheck("KiloGram", 1);
+            UnitCheck kg = new UnitCheck("Kilogram", 1);
             double actual = kg.KgtoGram();
-            Assert.AreEqual(1000, actual);
+            Gram gm = new Gram(1000);
+            int expected = gm.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -203,7 +219,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck gram = new UnitCheck("Gram", 1);
             double actual = gram.EqualsValue();
-            Assert.AreEqual(1, actual);
+            Gram gm = new Gram(1);
+            int expected = gm.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -214,7 +232,9 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck celcius = new UnitCheck("Celcius", 1);
             int actual = celcius.EqualsValue();
-            Assert.AreEqual(1, actual);
+            Celcius cel = new Celcius(1);
+            int expected = cel.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -225,36 +245,42 @@ namespace NUnit_QualityMeasurement
         {
             UnitCheck celcius = new UnitCheck("Celcius", 1);
             int actual = celcius.EqualsValue();
-            Assert.AreNotEqual(2, actual);
+            Celcius cel = new Celcius(2);
+            int expected = cel.EqualsValue();
+            Assert.AreNotEqual(expected, actual);
         }
 
         /// <summary>
         /// Compare_1_Celcius_NotEqual_to_50_FH_return_False.
         /// </summary>
         [Test]
-        public void Compare_1_Celcius_NotEqual_to_50_FH_return_False()
+        public void GiveCelciusValueAs1_WhenCalculate_ShouldReturnFAlse()
         {
             UnitCheck celcius = new UnitCheck("Celcius", 1);
             double actual = celcius.CelciustoFarenheit();
-            Assert.AreNotEqual(50, actual);
+            Farenheit farenheit = new Farenheit(1);
+            double expected = farenheit.EqualsValue();
+            Assert.AreNotEqual(expected, actual);
         }
 
         /// <summary>
         /// Compare_1_Celcius_Equal_to_33_Fh_return_True.
         /// </summary>
         [Test]
-        public void Compare_1_Celcius_Equal_to_33_Fh_return_True()
+        public void Given1Celcius_Equalto_33FhreturnTrue()
         {
             UnitCheck celcius = new UnitCheck("Celcius", 1);
             double actual = celcius.CelciustoFarenheit();
-            Assert.AreEqual(33.8, actual);
+            Farenheit farenheit = new Farenheit(33.8);
+            double expected = farenheit.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
         /// PerForm_Test_For_Equality_Null_Check.
         /// </summary>
         [Test]
-        public void PerForm_Test_For_Gram_Equality_Null_Check()
+        public void PerFormTestFor_Gram_EqualityNullCheck()
         {
             UnitCheck gram = new UnitCheck("Gram");
             bool result = gram.Equals(null);
@@ -290,8 +316,10 @@ namespace NUnit_QualityMeasurement
         public void Perform_Test_For_Gram_Equality_Value_Check()
         {
             UnitCheck gram = new UnitCheck("Gram", 3);
-            int result = gram.EqualsValue();
-            Assert.AreEqual(3, result);
+            int actual = gram.EqualsValue();
+            Gram gm = new Gram(3);
+            int expected = gm.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -333,9 +361,11 @@ namespace NUnit_QualityMeasurement
         [Test]
         public void Perform_Test_For_KiloGram_Equality_Value_Check()
         {
-            UnitCheck kilogram = new UnitCheck("KiloGram", 3);
-            int result = kilogram.EqualsValue();
-            Assert.AreEqual(3, result);
+            UnitCheck kilogram = new UnitCheck("Kilogram", 3);
+            int actual = kilogram.EqualsValue();
+            Kilogram kg = new Kilogram(3);
+            int expected = kg.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -378,8 +408,10 @@ namespace NUnit_QualityMeasurement
         public void Perform_Test_For_Celcius_Equality_Value_Check()
         {
             UnitCheck celcius = new UnitCheck("Celcius", 3);
-            int result = celcius.EqualsValue();
-            Assert.AreEqual(3, result);
+            int actual = celcius.EqualsValue();
+            Celcius cel = new Celcius(3);
+            int expected = cel.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
@@ -422,8 +454,10 @@ namespace NUnit_QualityMeasurement
         public void Perform_Test_For_Farenheit_Equality_Value_Check()
         {
             UnitCheck farenheit = new UnitCheck("Farenheit", 3);
-            int result = farenheit.EqualsValue();
-            Assert.AreEqual(3, result);
+            int actual = farenheit.EqualsValue();
+            Farenheit fh = new Farenheit(3);
+            double expected = fh.EqualsValue();
+            Assert.AreEqual(expected, actual);
         }
     }
 }
