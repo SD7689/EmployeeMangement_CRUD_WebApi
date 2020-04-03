@@ -79,6 +79,10 @@ namespace QualityMeasurement
             return this.Length / 12;
         }
 
+        /// <summary>
+        /// CelciustoFarenheit Method.
+        /// </summary>
+        /// <returns></returns>
         public double CelciustoFarenheit()
         {
             return this.Length * 33.8;
