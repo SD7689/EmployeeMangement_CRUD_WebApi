@@ -79,40 +79,19 @@ namespace QualityMeasurement
             return this.Length / 12;
         }
 
-        /// <summary>
-        /// ConverFeetintoYard Method. 
-        /// </summary>
-        /// <returns> double value </returns>
-        public double ConverFeetintoYard()
+        public double CelciustoFarenheit()
         {
-            return this.Length / 3;
+            return this.Length * 33.8;
         }
 
+
         /// <summary>
-        /// YardToFeet Method.
+        /// KgtoGram Method.
         /// </summary>
         /// <returns> int value </returns>
-        public int YardToFeet()
+        public int KgtoGram()
         {
-            return this.Length * 3;
-        }
-
-        /// <summary>
-        /// InchToYard Method.
-        /// </summary>
-        /// <returns> double value </returns>
-        public double InchToYard()
-        {
-            return this.Length / 36;
-        }
-
-        /// <summary>
-        /// YardToInch Method.
-        /// </summary>
-        /// <returns> int value </returns>
-        public int YardToInch()
-        {
-            return this.Length * 36;
+            return this.Length * 1000;
         }
 
         /// <summary>
