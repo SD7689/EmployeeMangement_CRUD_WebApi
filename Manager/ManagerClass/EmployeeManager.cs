@@ -14,7 +14,7 @@ namespace Manager.ManagerImplementation
     using System.Threading.Tasks;
 
     /// <summary>
-    /// 
+    /// EmployeeManager implements IEmployeeManager.
     /// </summary>
     public class EmployeeManager : IEmployeeManager
     {
@@ -79,6 +79,17 @@ namespace Manager.ManagerImplementation
         public Task<int> UpdateEmployee(Employee employeeChanges)
         {
             return this.repo.UpdateEmployee(employeeChanges);
+        }
+
+        /// <summary>
+        /// EmployeeLogin Method.
+        /// </summary>
+        /// <param name="Email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool EmployeeLogin(string email, string password)
+        {
+            return this.repo.EmployeeLogin(email,password);
         }
     }
 }

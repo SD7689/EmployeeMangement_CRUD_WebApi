@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WfjTszb/GgJBUC8GOy7VbOsC1vrv1wzfiyeBNlmBLiW51TFx00na5xAZSsDWYgjQ15buvM+EkWup2hByVm0zAg==",
+  "dgSpecHash": "BdWog7QNr0MEHjdXMqbAP0kgADm5ivBgzCLCSBZ1oWRw3m3miHBDHvsnE7TAwyfG7FCHn99dQeCCNQeDiVYY+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj",
+  "projectFilePath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shiv\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
@@ -205,6 +205,9 @@
     "C:\\Users\\Shiv\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Shiv\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",
+    "C:\\Users\\Shiv\\.nuget\\packages\\serilog.sinks.console\\2.1.0\\serilog.sinks.console.2.1.0.nupkg.sha512",
+    "C:\\Users\\Shiv\\.nuget\\packages\\serilog.sinks.file\\2.1.0\\serilog.sinks.file.2.1.0.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\4.0.1\\swashbuckle.aspnetcore.swagger.4.0.1.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\4.0.1\\swashbuckle.aspnetcore.swaggergen.4.0.1.nupkg.sha512",
     "C:\\Users\\Shiv\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\4.0.1\\swashbuckle.aspnetcore.swaggerui.4.0.1.nupkg.sha512",

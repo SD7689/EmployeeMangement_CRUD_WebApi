@@ -25,7 +25,7 @@ namespace EmployeeMangementCurd_Api
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .WriteTo.Console()
-            .WriteTo.File(@"C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\EmployeeMangementSystem\LogFile.txt", rollingInterval: RollingInterval.Day)
+         //   .WriteTo.File(@"C:\Users\Shiv\Desktop\EmployeeMangementCurdApi_WebApi\EmployeeMangementSystem\LogFile.txt", rollingInterval: RollingInterval.Day)
             .CreateLogger();
         }
 

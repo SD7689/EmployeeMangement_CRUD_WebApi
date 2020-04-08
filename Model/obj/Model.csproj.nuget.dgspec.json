@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj": {}
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj": {
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",

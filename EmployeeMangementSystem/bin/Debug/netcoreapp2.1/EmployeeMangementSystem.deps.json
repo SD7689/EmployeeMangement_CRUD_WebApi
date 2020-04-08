@@ -30,6 +30,9 @@
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
           "Repository": "1.0.0",
+          "Serilog": "2.9.0",
+          "Serilog.Sinks.Console": "2.1.0",
+          "Serilog.Sinks.File": "2.1.0",
           "Swashbuckle.AspNetCore.Swagger": "4.0.1",
           "Swashbuckle.AspNetCore.SwaggerGen": "4.0.1",
           "Swashbuckle.AspNetCore.SwaggerUI": "4.0.1"
@@ -210,6 +213,49 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Serilog/2.9.0": {
+        "runtime": {
+          "lib/netstandard2.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.9.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.Console/2.1.0": {
+        "dependencies": {
+          "Serilog": "2.9.0",
+          "System.Console": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Console.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Console.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/2.1.0": {
+        "dependencies": {
+          "Serilog": "2.9.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
         }
       },
       "Swashbuckle.AspNetCore.Swagger/4.0.1": {
@@ -3652,6 +3698,27 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Serilog/2.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QzcrD33A3+CsVvwi1I5CSei67ikQnkGrw7SscgL+vZTghaC2aNYg8fiUcedXHzKJFNjgje9rBjzwYGQTKEaXaA==",
+      "path": "serilog/2.9.0",
+      "hashPath": "serilog.2.9.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.Console/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LqTjUgmfuKNgnkVY7S1ocotis9qpt+l7yvqTgvxi0GWCrtMW39W9L08mpxiA1mLVGbSDbxIlFRAnqo/fEEBX9Q==",
+      "path": "serilog.sinks.console/2.1.0",
+      "hashPath": "serilog.sinks.console.2.1.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.File/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hasNYrE3TxKgKg07hpkWrJFNWu4z7Yr9V3Qi4aNUFP8iMnJGQp9nOO7lvXr6SV4O7o1ai+w9GBGMw+q1PespxA==",
+      "path": "serilog.sinks.file/2.1.0",
+      "hashPath": "serilog.sinks.file.2.1.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.Swagger/4.0.1": {
       "type": "package",

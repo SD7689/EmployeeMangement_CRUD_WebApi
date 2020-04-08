@@ -3020,6 +3020,43 @@
           }
         }
       },
+      "Serilog/2.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.Console/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Console": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Console.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Console.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore.Swagger/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -8168,6 +8205,55 @@
         "version.txt"
       ]
     },
+    "Serilog/2.9.0": {
+      "sha512": "QzcrD33A3+CsVvwi1I5CSei67ikQnkGrw7SscgL+vZTghaC2aNYg8fiUcedXHzKJFNjgje9rBjzwYGQTKEaXaA==",
+      "type": "package",
+      "path": "serilog/2.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "serilog.2.9.0.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Console/2.1.0": {
+      "sha512": "LqTjUgmfuKNgnkVY7S1ocotis9qpt+l7yvqTgvxi0GWCrtMW39W9L08mpxiA1mLVGbSDbxIlFRAnqo/fEEBX9Q==",
+      "type": "package",
+      "path": "serilog.sinks.console/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.Sinks.Console.dll",
+        "lib/netstandard1.3/Serilog.Sinks.Console.dll",
+        "serilog.sinks.console.2.1.0.nupkg.sha512",
+        "serilog.sinks.console.nuspec"
+      ]
+    },
+    "Serilog.Sinks.File/2.1.0": {
+      "sha512": "hasNYrE3TxKgKg07hpkWrJFNWu4z7Yr9V3Qi4aNUFP8iMnJGQp9nOO7lvXr6SV4O7o1ai+w9GBGMw+q1PespxA==",
+      "type": "package",
+      "path": "serilog.sinks.file/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.Sinks.File.dll",
+        "lib/net45/Serilog.Sinks.File.xml",
+        "lib/netstandard1.3/Serilog.Sinks.File.dll",
+        "lib/netstandard1.3/Serilog.Sinks.File.xml",
+        "serilog.sinks.file.2.1.0.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore.Swagger/4.0.1": {
       "sha512": "rqzS3vHrjz+tR5j0nZOKZyaMTDfLGbVYkwMq205aYuGbsiGwbOlNU0Q8lq4Q0ptQPMKVkUf8XouCIdJ3qpK17w==",
       "type": "package",
@@ -12822,6 +12908,9 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.10",
       "Repository >= 1.0.0",
+      "Serilog >= 2.9.0",
+      "Serilog.Sinks.Console >= 2.1.0",
+      "Serilog.Sinks.File >= 2.1.0",
       "Swashbuckle.AspNetCore.Swagger >= 4.0.1",
       "Swashbuckle.AspNetCore.SwaggerGen >= 4.0.1",
       "Swashbuckle.AspNetCore.SwaggerUI >= 4.0.1"
@@ -12833,11 +12922,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj",
       "projectName": "EmployeeMangementSystem",
-      "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj",
+      "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj",
       "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\obj\\",
+      "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12853,11 +12942,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj": {
-              "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj"
+            "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj": {
+              "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj"
             },
-            "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj"
+            "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj"
             }
           }
         }
@@ -12891,6 +12980,18 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.10, )"
+          },
+          "Serilog": {
+            "target": "Package",
+            "version": "[2.9.0, )"
+          },
+          "Serilog.Sinks.Console": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Serilog.Sinks.File": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",

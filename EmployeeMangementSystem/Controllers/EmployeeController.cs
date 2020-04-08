@@ -10,9 +10,7 @@ namespace EmployeeMangementCurd_Api.Controllers
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Manager.ManagerInterface;
-    using Microsoft.AspNetCore.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Logging;
     using Model;
     using Serilog;
 
@@ -25,16 +23,9 @@ namespace EmployeeMangementCurd_Api.Controllers
     {
         public readonly IEmployeeManager manager;
 
-        private readonly ILogger<EmployeeController> logger;
-
         public EmployeeController(IEmployeeManager manager)
         {
             this.manager = manager;
-        }
-
-        public EmployeeController(ILogger<EmployeeController> logger)
-        {
-            this.logger = logger;
         }
 
         /// <summary>
@@ -43,7 +34,6 @@ namespace EmployeeMangementCurd_Api.Controllers
         /// <param name="employee"></param>
         /// <returns></returns>
         [Route("AddEmployee")]
-        [Route("Error/{result}")]
         [HttpPost]
         public async Task<IActionResult> AddEmployee(Employee employee)
         {
@@ -116,6 +106,27 @@ namespace EmployeeMangementCurd_Api.Controllers
         public Employee GetEmployee(int id)
         {
             return this.manager.GetEmployee(id);
+        }
+
+        /// <summary>
+        /// EmployeeLogin Method.
+        /// Routing  [Route("LoginEmployee")]
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Route("LoginEmployee")]
+        [HttpPost]
+        public IActionResult EmployeeLogin(string email, string password)
+        {
+            var result = this.manager.EmployeeLogin(email, password);
+            if (result == true)
+            {
+                return this.Ok(email);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
     }
 }

@@ -24,46 +24,72 @@
         <div class="collapse navbar-collapse " id="nav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a style="color:white;" class="nav-link" href="#">Home</a>
+                    <a style="color:white;" class="nav-link" href="Home.html">Home</a>
                 </li>
-                <li  class="nav-item">
+                <li class="nav-item">
                     <a style="color:white;" class="nav-link" href="#">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a style="color:white;" class="nav-link" href="#">Login</a>
+                    <a style="color:white;" class="nav-link" href="#">Login.html</a>
                 </li>
             </ul>
         </div>
     </nav>
     <button style="margin-left:107px; margin-top: 20px;" type="button" class="btn btn-primary btn-sm"><i class='fas fa-user-plus'></i>Add Employee</button>
     <div class="container">
-        <p class="text-black display-4"> NO RECORD FOUND !!</p>
+        <p class="text-black display-4" id="record" style="display:none"> NO RECORD FOUND !!</p>
     </div>
     <div class="container">
         <table class="table table-hover bg-light">
             <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
+                    <th>FullName</th>
                     <th>Email</th>
+                    <th>Password</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>
-                      <button type="button" class="btn btn-primary btn-sm"><i class='fas fa-user-edit'></i></button>
-                    </th>
-                    <th>
-                      <button type="button" class="btn btn-primary btn-sm"><i class='fas fa-user-times'></i></button>
-                    </th>
-                </tr>
+            <tbody id="tableBody">
             </tbody>
         </table>
     </div>
+    <script>
+        var xHttp = new XMLHttpRequest();
+        xHttp.open("GET", 'https://localhost:44369/api/Values/GetAllEmployee');
+        xHttp.onload = function () {
+            var tableBody = JSON.parse(xHttp.responseText);
+            if (tableBody == null) {
+                document.getElementById("record").style.display == "block";
+            }
+            console.log(tableBody);
+            var html = "";
+            for (var a = 0; a < tableBody.length; a++) {
+                var fullName = tableBody[a].FullName;
+                var email = tableBody[a].Email;
+                var password = tableBody[a].Password;
+                var mobile = tableBody[a].Mobile;
+                var address = tableBody[a].Address;
+
+                html += "<tr>";
+                html += "<td>" + FullName + "</td>";
+                html += "<td>" + Email + "</td>";
+                html += "<td>" + Password + "</td>";
+                html += "<td>" + Mobile + "</td>";
+                html += "<td>" + Address + "</td>";
+                html += `<td><button type="button" class="btn btn-primary btn-sm"><i class='fas fa-user-edit'></i></button></td>`;
+                html += `<td><button type="button" class="btn btn-primary btn-sm"><i class='fas fa-user-times'></i></button></td>`;
+                html += "</tr>";
+                function editFunction() {
+                    var xHttp = new XMLHttpRequest();
+                    xHttp.open("GET", 'https://localhost:44369/api/Values/UpdateEmployee');
+                }
+            }
+            document.getElementById("tableBody").innerHTML += html;
+        }
+        xHttp.send();
+    </script>
 </body>
 </html>

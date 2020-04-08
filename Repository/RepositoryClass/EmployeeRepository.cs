@@ -10,6 +10,7 @@ namespace Repository.RepositoryClass
     using Repository.RepositoryInterface;
     using Repository.UserContext;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -87,6 +88,24 @@ namespace Repository.RepositoryClass
             employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             var result = userDBContext.SaveChangesAsync();
             return result;
+        }
+
+        /// <summary>
+        /// EmployeeLogin Method.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool EmployeeLogin(string email, string password)
+        {
+            var result = userDBContext.Employees.Where(id => id.Email == email && id.Password == password);
+            if (result != null)
+            {
+                return true;
+            }
+            {
+                return false;
+            }
         }
     }
 }

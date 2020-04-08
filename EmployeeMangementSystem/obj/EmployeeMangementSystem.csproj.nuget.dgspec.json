@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj": {}
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj": {
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj",
         "projectName": "EmployeeMangementSystem",
-        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\EmployeeMangementSystem.csproj",
+        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\EmployeeMangementSystem.csproj",
         "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\EmployeeMangementCurd_Api\\obj\\",
+        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\EmployeeMangementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj": {
-                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj"
+              "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj": {
+                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj"
               },
-              "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj"
+              "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj"
               }
             }
           }
@@ -66,6 +66,18 @@
               "target": "Package",
               "version": "[2.1.10, )"
             },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[4.0.1, )"
@@ -93,14 +105,14 @@
         }
       }
     },
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj": {
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj",
+        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj",
         "projectName": "Manager",
-        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\Manager.csproj",
+        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\Manager.csproj",
         "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Manager\\obj\\",
+        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Manager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -116,11 +128,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj"
+              "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj"
               },
-              "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj"
+              "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj"
               }
             }
           }
@@ -155,14 +167,14 @@
         }
       }
     },
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj": {
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -210,14 +222,14 @@
         }
       }
     },
-    "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj": {
+    "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\Shiv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -233,8 +245,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangementCurdApi_WebApi\\Model\\Model.csproj"
+              "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Shiv\\Desktop\\EmployeeMangement_CRUD_WebApi\\Model\\Model.csproj"
               }
             }
           }

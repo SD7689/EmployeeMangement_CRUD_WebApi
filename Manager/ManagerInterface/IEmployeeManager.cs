@@ -49,5 +49,13 @@ namespace Manager.ManagerInterface
         /// <param name="id"></param>
         /// <returns> It returns if execution is successful or not </returns>
         Employee DeleteEmployee(int id);
+
+        /// <summary>
+        /// EmployeeLogin Method.
+        /// </summary>
+        /// <param name="Email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        bool EmployeeLogin(string email, string password);
     }
 }
