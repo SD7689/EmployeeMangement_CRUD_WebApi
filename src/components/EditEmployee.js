@@ -1,62 +1,58 @@
 import React, {Component} from 'react';
 import {Modal, Button, Row, Col, Form} from 'react-bootstrap';
+import axios from 'axios'
 
 import Snackbar from '@material-ui/core/SnackBar';
 import IconButton from '@material-ui/core/IconButton'; 
 
 export class EditEmployee extends Component{
+
     constructor(props)
     {
-        super(props);
-        this.state = {snackbaropen: false,snackbarmsg:''};
-        this.handleSubmit = this.handleSubmit.bind(this);
+        super(props)
+        this.state = {
+            empId:'',
+            fullName: '',
+            email:'',
+            password:'',
+            mobile:'',
+            address:'', 
+            snackbaropen: false,snackbarmsg:''
+    
+    };
+         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    snackbarClose = (event) =>
+    snackbarClose = () =>
     {
         this.setState({snackbaropen:false});
     };
 
-    handleSubmit(event)
-    {
-        event.preventDefault();
-        fetch('https://localhost:44369//api/Employee/UpdateEmployee',
-        {
-            method:'PUT',
-            headers:
-            {
-                'Accept': 'application/json',
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify
-            ({
-                EmployeeId:event.target.EmployeeId.value,
-                FullName: event.target.FullName.value,
-                Email: event.target.Email.value,
-                Password:event.target.Password.value,
-                Mobile:event.target.Mobile.value,
-                Address:event.target.Email.value
-            })
-        })
-        .then(res=> res.json())
-        .then((result)=>
-        {
-           // alert(result);
-           this.setState({snackbaropen:true, snackbarmsg:result});
-        },
-        (error)=>
-        {
-           this.setState({snackbaropen:true, snackbarmsg:'failed'})
-            //alert('Failed')
-        }
-        )
+    changeHandler = (event) => {
+        this.setState({[event.target.name]: event.target.value})
     }
+
+    handleSubmit = event =>{
+        event.preventDefault()
+        console.log(this.state)
+        axios.put('https://localhost:44369/api/Employee/UpdateEmployee', this.state)
+        .then(response => {
+            console.log(response)
+            this.setState({snackbaropen:true, snackbarmsg:'result'});
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({snackbaropen:true, snackbarmsg:'failed'})
+        })
+    }
+
     render()
     {
+        const {empId,fullName, email, password,mobile,address} = this.state 
         return(
             <div className="container">
                 <Snackbar 
-                anchorOrigin={{vertical:'center',horizontal:'center'}}
+                anchorOrigin={{vertical:'bottom',horizontal:'bottom'}}
                 open = {this.state.snackbaropen}
                 autoHideDuration = {3000}
                 onClose={this.snackbarClose}
@@ -87,64 +83,76 @@ export class EditEmployee extends Component{
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="EmployeeId">
+                                <Form.Group controlId="empId">
                                         <Form.Label>EmployeeId</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="EmployeeId"
+                                            name="empId"
+                                            value={empId}
+                                            onChange={this.changeHandler}
                                             required
                                             disabled
-                                            defaultValue = {this.props.empid}
+                                            defaultValue = {this.props.empId}
                                             placeholder="EmployeeId"
                                         />
                                 </Form.Group>
-                                <Form.Group controlId="FullName">
+                                <Form.Group controlId="fullName">
                                     <Form.Label>FullName</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="FullName"
+                                            name="fullName"
+                                            value={fullName}
+                                            onChange={this.changeHandler}   
                                             required
-                                            defaultValue = {this.props.empname}
+                                            defaultValue = {this.props.fullName}
                                             placeholder="FullName"
                                         />
                                 </Form.Group>
-                                <Form.Group controlId="Email">
+                                <Form.Group controlId="email">
                                     <Form.Label>Email Id</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Email"
+                                            name="email"
+                                            value={email}
+                                            onChange={this.changeHandler}
                                             required
-                                            defaultValue = {this.props.empEmail}
+                                            defaultValue = {this.props.email}
                                             placeholder="Email"
                                         />
                                 </Form.Group>
-                                <Form.Group controlId="Password">
+                                <Form.Group controlId="password">
                                     <Form.Label>Password</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Password"
+                                            name="password"
+                                            value={password}
+                                            onChange={this.changeHandler}
                                             required
-                                            defaultValue = {this.props.empPass}
+                                            defaultValue = {this.props.password}
                                             placeholder="Password"
                                         />
                                 </Form.Group>
-                                <Form.Group controlId="Mobile">
+                                <Form.Group controlId="mobile">
                                     <Form.Label>Mobile no.</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Mobile"
+                                            name="mobile"
+                                            value={mobile}
+                                            onChange={this.changeHandler}
                                             required
-                                            defaultValue = {this.props.empMob}
+                                            defaultValue = {this.props.mobile}
                                             placeholder="Mobile"
                                         />
                                 </Form.Group>
-                                <Form.Group controlId="Address">
+                                <Form.Group controlId="address">
                                     <Form.Label>Address</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            name="Address"
+                                            name="address"
+                                            value={address}
+                                            onChange={this.changeHandler}
                                             required
-                                            defaultValue = {this.props.empAdd}
+                                            defaultValue = {this.props.address}
                                             placeholder="Address"
                                         />
                                 </Form.Group>

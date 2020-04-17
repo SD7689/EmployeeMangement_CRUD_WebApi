@@ -3,14 +3,14 @@ import {Table} from 'react-bootstrap';
 import {Button, ButtonToolbar} from 'react-bootstrap';
 import {AddEmployee} from './AddEmployee';
 import {EditEmployee} from './EditEmployee';
+import axios from 'axios';
 
 export class Employee extends Component 
 {
-
     constructor(props)
     {
         super(props);
-        this.state={emps:[], addModalShow : false, editModalShow : false}
+        this.state={emps:[],empId:'', addModalShow : false, editModalShow : false}
     }
 
     componentDidMount(){
@@ -19,37 +19,45 @@ export class Employee extends Component
 
     refreshList()
     {
-        fetch('https://localhost:44369/api/Employee/GetAllEmployee')
-        .then(Response=> Response.json())
-        .then(data => 
-            {
-                this.setState({emps:data});
-            }
-        );
+        axios.get('https://localhost:44369/api/Employee/GetAllEmployee')
+        .then(response=> {
+            const emps = response.data;
+            this.setState({
+                emps : emps
+            })
+            console.log(this.state.emps);
+            })
     }
-//state or property get changed will refresh the list
+
+    //state or property get changed will refresh the list
     componentDidUpdate()
     {
         this.refreshList();
     }
 
-    deleteEmp(empid)
-    {
+    handleChange = event =>{
+        this.setState({empId: event.target.value});
+    }
+
+    deleteEmp(empId) {
+      //  event.preventDefault();
         if(window.confirm('Are you sure?'))
         {
-            fetch('https://localhost:44369/api/Employee/DeleteEmployee/' +empid,
+        axios.delete('https://localhost:44369/api/Employee/DeleteEmployee/',+empId)
+        .then(response => 
             {
-                method:'DELETE',
-                header:
-                {
-                    'Accept':'application/json',
-                    'Content-Type':'application/json'
-                }
+            const empId = response.data;
+            this.setState({
+                empId : empId
             })
+            console.log(this.state.empId);
+            //console.log(res.data);
+        })
         }
     }
+
     render(){
-        const {emps , empid, empname, empEmail, empPass, empMob, empAdd} = this.state;
+        const {emps , empId, fullName, email, password, mobile, address} = this.state;
         let addModalClose =() => this.setState({addModalShow:false});
         let editModalClose =() => this.setState({editModalShow:false});
         return(
@@ -60,46 +68,62 @@ export class Employee extends Component
                         <th>EmployeeId</th>
                         <th>FullName</th>
                         <th>Email</th>
-                        <th>Password</th>
+                        <th>Password</th> 
                         <th>Mobile</th>
                         <th>Address</th>
-                        <th>Option</th>
-                       {/* <th></th> */}
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    
                     </tr>
                 </thead>
                 <tbody>
                     {emps.map(emp=>
-                        <tr key={emp.EmployeeId}>
-                        <td> {emp.EmployeeId}</td>
-                        <td> {emp.FullName}</td>
-                        <td> {emp.Email}</td>
-                        <td> {emp.Password}</td>
-                        <td> {emp.Mobile}</td>
-                        <td> {emp.Address}</td>
+                        <tr key={emp.empId}>
+                        <td> {emp.empId}</td> 
+                        <td> {emp.fullName}</td>
+                        <td> {emp.email}</td>
+                        <td> {emp.password}</td>
+                        <td> {emp.mobile}</td>
+                        <td> {emp.address}</td>
                         <td>
                             <ButtonToolbar>
-                        <Button
-                            className="mr-2" variant="primary"
-                            onClick={()=> this.setState({editModalShow:true,empid:emps.EmployeeId, empname:emps.FullName, empEmail:emps.Email, empPass:emps.Password, empMob:emps.Mobile, empAdd:emps.Address})}
-                        >Edit
-                        </Button>
-                        <Button
-                            className="mr-2" variant="danger"
-                            onClick={()=> this.deleteEmp(emp.empid)}
-                        >
-                        Delete
-                        </Button>
-                        <EditEmployee
-                            show = {this.state.editModalShow}
-                            onHide={editModalClose}
-                            empid = {empid}
-                            empname = {empname}
-                            empEmail = {empEmail}
-                            empPass = {empPass}
-                            empMob = {empMob}
-                            empAdd = {empAdd}
-                        />
-                        </ButtonToolbar>
+                            <Button
+                                className="mr-2" variant="primary"
+                                onClick={()=> 
+                                    this.setState(
+                                        {
+                                            editModalShow:true,
+                                            empId:emps.EmployeeId,
+                                            fullName:emps.FullName,
+                                            email:emps.Email,
+                                            password:emps.Password,
+                                            mobile:emps.Mobile,
+                                            address:emps.Address
+                                        })}
+                            >Edit
+                            </Button>
+                            <EditEmployee
+                                empId = {empId}
+                                fullName = {fullName}
+                                email = {email}
+                                password = {password}
+                                mobile = {mobile}
+                                address = {address}
+                                show = {this.state.editModalShow}
+                                onHide={editModalClose}
+                            />
+                            </ButtonToolbar>
+                        </td>
+                        <td>
+                            <ButtonToolbar>
+                            <Button
+                            className="mr-2" variant="danger" 
+                            onChange={this.handleChange}
+                            onClick={()=> this.deleteEmp(emps.empid)}
+                            >
+                            Delete
+                            </Button>
+                            </ButtonToolbar>
                         </td>
                         </tr>
                         )}

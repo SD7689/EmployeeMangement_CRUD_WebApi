@@ -3,61 +3,56 @@ import {Modal, Button, Row, Col, Form} from 'react-bootstrap';
 
 import Snackbar from '@material-ui/core/SnackBar';
 import IconButton from '@material-ui/core/IconButton'; 
+import axios from 'axios'
 
 export class AddEmployee extends Component
 {
     constructor(props)
     {
-        super(props);
-        this.state = {snackbaropen: false,snackbarmsg:''};
+        super(props)
+        this.state = {
+            fullName: '',
+            email:'',
+            password:'',
+            mobile:'',
+            address:'', 
+            snackbaropen: false,snackbarmsg:''
+    
+    };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    snackbarClose = (event) =>
+    snackbarClose = () =>
     {
         this.setState({snackbaropen:false});
     };
 
-    handleSubmit(event)
-    {
-        event.preventDefault();
-        fetch('https://localhost:44369//api/Employee/AddEmployee',
-        {
-            method:'POST',
-            headers:
-            {
-                'Accept': 'application/json',
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify
-            ({
-                EmployeeId:null,
-                FullName: event.target.FullName.value,
-                Email: event.target.Email.value,
-                Password:event.target.Password.value,
-                Mobile:event.target.Mobile.value,
-                Address:event.target.Email.value
-            })
-        })
-        .then(res=> res.json())
-        .then((result)=>
-        {
-           // alert(result);
-           this.setState({snackbaropen:true, snackbarmsg:result});
-        },
-        (error)=>
-        {
-           this.setState({snackbaropen:true, snackbarmsg:'failed'})
-            //alert('Failed')
-        }
-        )
+
+    changeHandler = (event) => {
+        this.setState({[event.target.name]: event.target.value})
     }
+
+    handleSubmit = event =>{
+        event.preventDefault()
+        console.log(this.state)
+        axios.post('https://localhost:44369/api/Employee/AddEmployee', this.state)
+        .then(response => {
+            console.log(response)
+            this.setState({snackbaropen:true, snackbarmsg:'result'});
+        })
+        .catch(error => {
+            console.log(error)
+            this.setState({snackbaropen:true, snackbarmsg:'failed'})
+        })
+    }
+
     render()
     {
+        const { fullName, email, password,mobile,address} = this.state
         return(
             <div className="container">
                 <Snackbar 
-                    anchorOrigin={{vertical:'center',horizontal:'center'}}
+                    anchorOrigin={{vertical:'bottom',horizontal:'bottom'}}
                     open = {this.state.snackbaropen}
                     autoHideDuration = {3000}
                     onClose={this.snackbarClose}
@@ -89,47 +84,57 @@ export class AddEmployee extends Component
                 <Row>
                     <Col sm={6}>
                         <Form onSubmit={this.handleSubmit}>
-                            <Form.Group controlId="FullName">
+                            <Form.Group controlId="fullName">
                                 <Form.Label>FullName</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="FullName"
+                                        name="fullName"
+                                        value={fullName}
+                                        onChange={this.changeHandler}
                                         required
                                         placeholder="FullName"
                                     />
                             </Form.Group>
-                            <Form.Group controlId="Email">
+                            <Form.Group controlId="email">
                                 <Form.Label>Email Id</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="Email"
+                                        name="email"
+                                        value={email}
+                                        onChange={this.changeHandler}
                                         required
                                         placeholder="Email"
                                     />
                             </Form.Group>
-                            <Form.Group controlId="Password">
+                            <Form.Group controlId="password">
                                 <Form.Label>Password</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="Password"
+                                        name="password"
+                                        value={password}
+                                        onChange={this.changeHandler}
                                         required
                                         placeholder="Password"
                                     />
                             </Form.Group>
-                            <Form.Group controlId="Mobile">
+                            <Form.Group controlId="mobile">
                                 <Form.Label>Mobile no.</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="Mobile"
+                                        name="mobile"
+                                        value={mobile}
+                                        onChange={this.changeHandler}
                                         required
                                         placeholder="Mobile"
                                     />
                             </Form.Group>
-                            <Form.Group controlId="Address">
+                            <Form.Group controlId="address">
                                 <Form.Label>Address</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="Address"
+                                        name="address"
+                                        value={address}
+                                        onChange={this.changeHandler}
                                         required
                                         placeholder="Address"
                                     />
