@@ -1,0 +1,12 @@
+C:\Users\Shiv\source\repos\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\Shiv\source\repos\Model\bin\Debug\netcoreapp2.1\Model.runtimeconfig.json
+C:\Users\Shiv\source\repos\Model\bin\Debug\netcoreapp2.1\Model.runtimeconfig.dev.json
+C:\Users\Shiv\source\repos\Model\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Shiv\source\repos\Model\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Shiv\source\repos\Model\obj\Debug\netcoreapp2.1\Model.genruntimeconfig.cache
