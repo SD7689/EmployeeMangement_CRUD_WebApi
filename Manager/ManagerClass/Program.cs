@@ -5,7 +5,7 @@
 // <creator name="Shivam Dewangan"/>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Model
+namespace Manager
 {
     using System;
 

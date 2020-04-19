@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Qmeasurement.cs" company="Bridgelabz">
+// Copyright © 2020 Company="BridgeLabz".
+// </copyright>
+// <creator name="Shivam Dewangan"/>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace Model
 {
-    public class Conversion
+
+    /// <summary>
+    /// Qmeasurement Class.
+    /// </summary>
+    public class Qmeasurement
     {
         private decimal feet;
 
@@ -19,6 +26,9 @@ namespace Model
         private decimal kilogram;
 
 
+        /// <summary>
+        /// Feet property Get Set.
+        /// </summary>
         public decimal Feet
         {
             get
@@ -31,6 +41,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Inch property Get Set
+        /// </summary>
         public decimal Inch
         {
             get
@@ -43,6 +56,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Gram property Get Set
+        /// </summary>
         public decimal Gram
         {
             get
@@ -55,6 +71,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Meter property Get Set
+        /// </summary>
         public decimal Meter
         {
             get
@@ -67,6 +86,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Centimeter property Get Set
+        /// </summary>
         public decimal Centimeter
         {
             get
@@ -78,6 +100,10 @@ namespace Model
                 this.centimeter = value;
             }
         }
+
+        /// <summary>
+        /// KiloGram property Get Set
+        /// </summary>
         public decimal KiloGram
         {
             get
