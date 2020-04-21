@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import QuantityUI from './Components/MainUI/QuantityUI';
+import QMeasurementUI from './Components/QuantityUI/QMeasurementUI';
 
 function App() {
   return (
-      <QuantityUI />
+    <div className="UI">
+      <h1>Quantity Measurement UI</h1>
+      <QMeasurementUI />
+    </div>
   );
 }
 

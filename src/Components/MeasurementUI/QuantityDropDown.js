@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class MeasurementType extends Component {
+class QuantityDropDown extends Component {
     
     render() {
         return (
@@ -12,4 +12,4 @@ class MeasurementType extends Component {
     }
 }
 
-export default MeasurementType;
+export default QuantityDropDown;

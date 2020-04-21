@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class InputTypeLeft extends Component{
+class DropDownLeft extends Component{
     
     render(){
         return(
@@ -24,4 +24,4 @@ class InputTypeLeft extends Component{
         )
     }
 }
-export default InputTypeLeft;
+export default DropDownLeft;

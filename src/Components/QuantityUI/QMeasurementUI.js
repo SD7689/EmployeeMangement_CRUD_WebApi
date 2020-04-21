@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MeasurementType from '../ConversionUI/MeasurementType';
-import InputTypeLeft from '../ConversionUI/InputTypeLeft';
-import Formula from '../ConversionUI/Formula';
+import QuantityDropDown from '../MeasurementUI/QuantityDropDown';
+import DropDownLeft from '../MeasurementUI/DropDownLeft';
+import FormulaLabel from '../MeasurementUI/FormulaLabel';
 import { FaEquals } from "react-icons/fa";
-import InputTypeRight from '../ConversionUI/InputTypeRight';
+import DropDownRight from '../MeasurementUI/DropDownRight';
 import {feetToInch, inchToFeet, meterToCentimeter, centimeterToMeter} from '../../Services/lengthServices';
 import { kgToGm, gmToKg } from '../../Services/weightServices';
-class QuantityUI extends Component {
+class QMeasurementUI extends Component {
     state = {
         showType: false,
         selectTypeLeft: "",
@@ -135,16 +135,16 @@ class QuantityUI extends Component {
 
     render() {
         return (
-            <div className='container m-5 d-flex justify-content-center' id='main-div'>
-                <MeasurementType measurementTypeChanged={this.measurementTypeHandler} />
+            <div className='container m-5 d-flex' id='main-div'>
+                <QuantityDropDown measurementTypeChanged={this.measurementTypeHandler} />
                 <div className='row' id='main-typeconversion-div'>
-                    <InputTypeLeft inputTypeLeft={this.inputTypeLeftChangeHandler} selectTypeLeft={this.selectTypeLeftChangeHandler} showType={this.state.showType} />
+                    <DropDownLeft inputTypeLeft={this.inputTypeLeftChangeHandler} selectTypeLeft={this.selectTypeLeftChangeHandler} showType={this.state.showType} />
                     <FaEquals id='equalIcon' />
-                    <InputTypeRight inputTypeRight={this.inputTypeRightChangeHandler} selectTypeRight={this.selectTypeRightChangeHandler}  valueRight={this.state.inputTypeRight} showType={this.state.showType} />
+                    <DropDownRight inputTypeRight={this.inputTypeRightChangeHandler} selectTypeRight={this.selectTypeRightChangeHandler}  valueRight={this.state.inputTypeRight} showType={this.state.showType} />
                 </div>
-                <Formula selectTypeLeft={this.state.selectTypeLeft} selectTypeRight={this.state.selectTypeRight}/>
+                <FormulaLabel selectTypeLeft={this.state.selectTypeLeft} selectTypeRight={this.state.selectTypeRight}/>
             </div>
         )
     }
 }
-export default QuantityUI;
+export default QMeasurementUI;

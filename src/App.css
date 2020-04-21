@@ -1,22 +1,42 @@
 #main-div {
   display: flex;
-   flex-direction: column;
-   border: 2px solid black;
-   border-radius: 4px;
-   padding: 10px;
+  flex-direction: column;
+  border: 6px solid #e89610;
+  background: #e9ecef;
+  border-radius: 12px;
+  padding: 6vh;
+  width: 65%;
+  margin-left: 13rem !important;
  }
  #main-typeconversion-div{
    display: flex;
  }
- #main-label{
-   /* display: flex;
-   flex-direction: column;*/
-   /* width: 30%;  */
- }
- 
- #equalIcon{
-    margin-top: 8vh;  
- }
+#root{
+  margin-left:10vh;
+}
+#equalIcon {
+  margin-top: 12vh;
+  color:black;
+}
+#measurementType {
+  background: #e2e2e2;
+  border: 3px solid black;
+}
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 8vh;
+  padding: 4px;
+}
+.form-control{
+  color: #1d2124;
+  background: #e2e2e2;
+  font-weight: 500;
+  border: 3px solid black;
+  text-align: center;
+
+}
  #formula-label{
    background-color: #f9a825;
    color: white;
@@ -24,6 +44,9 @@
    padding: 8px;
    border-radius: 5px;
  }
- select#measurementType {
-   background: whiteSmoke;
+ p {
+  display: inline;
+  margin-left: 12vh;
+  color: black;
+  font-size: 24px;
  }
