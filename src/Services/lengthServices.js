@@ -1,8 +1,8 @@
 import axios from 'axios';
-const feetToInchURL = 'https://localhost:44321/api/Values/FeettoInch';
-const inchToFeetURL = 'https://localhost:44321/api/Values/InchToFeet';
-const meterToCentimeterURL = 'https://localhost:44321/api/Values/MetertoCentimeter';
-const centimeterToMeterURL = 'https://localhost:44321/api/Values/CentimetertoMeter';
+const feetToInchURL = 'https://localhost:5001/api/Values/FeettoInch';
+const inchToFeetURL = 'https://localhost:5001/api/Values/InchToFeet';
+const meterToCentimeterURL = 'https://localhost:5001/api/Values/MetertoCentimeter';
+const centimeterToMeterURL = 'https://localhost:5001/api/Values/CentimetertoMeter';
 
 export async function feetToInch(data){
    const response = await axios.post(feetToInchURL,data);
