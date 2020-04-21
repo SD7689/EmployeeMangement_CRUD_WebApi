@@ -56,7 +56,7 @@ namespace Manager
         /// <returns> value</returns>
         public decimal GmtoKg(Qmeasurement value)
         {
-            return this.repo.FeettoInch(value);
+            return this.repo.GmtoKg(value);
         }
 
         /// <summary>
