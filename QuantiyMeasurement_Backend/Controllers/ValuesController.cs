@@ -7,7 +7,6 @@
 
 namespace QuantityMeasurement_Backend.Controllers
 {
-
     using Manager;
     using Microsoft.AspNetCore.Mvc;
     using Model;
@@ -24,6 +23,8 @@ namespace QuantityMeasurement_Backend.Controllers
         /// IQmeasurementManager property.
         /// </summary>
         public IQmeasurementManager manager;
+
+        Msmq send = new Msmq();
 
         /// <summary>
         /// ValuesController Constructor.
@@ -45,13 +46,14 @@ namespace QuantityMeasurement_Backend.Controllers
         [HttpPost]
         public IActionResult FeettoInch(Qmeasurement value)
         {
-            var result = this.manager.FeettoInch(value);
+                var result = this.manager.FeettoInch(value);
+                if (result >= 0)
+                {
+                send.SendMessageToQueue("Inch", result);
+                    return this.Ok(result);
+                }
 
-            if (result >= 0)
-            {
-                return this.Ok(result);
-            }
-            return this.BadRequest();
+                return this.BadRequest();
         }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace QuantityMeasurement_Backend.Controllers
 
             if (result >= 0)
             {
+                send.SendMessageToQueue("Feet", result);
                 return this.Ok(result);
             }
             return this.BadRequest();
@@ -89,6 +92,7 @@ namespace QuantityMeasurement_Backend.Controllers
 
             if (result >= 0)
             {
+                send.SendMessageToQueue("Centimeter", result);
                 return this.Ok(result);
             }
             return this.BadRequest();
@@ -109,6 +113,7 @@ namespace QuantityMeasurement_Backend.Controllers
 
             if (result >= 0)
             {
+                send.SendMessageToQueue("Meter", result);
                 return this.Ok(result);
             }
             return this.BadRequest();
@@ -129,6 +134,7 @@ namespace QuantityMeasurement_Backend.Controllers
 
             if (result >= 0)
             {
+                send.SendMessageToQueue("Gram", result);
                 return this.Ok(result);
             }
             return this.BadRequest();
@@ -149,6 +155,7 @@ namespace QuantityMeasurement_Backend.Controllers
 
             if (result >= 0)
             {
+                send.SendMessageToQueue("KiloGram", result);
                 return this.Ok(result);
             }
             return this.BadRequest();
